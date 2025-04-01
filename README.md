@@ -3,15 +3,19 @@ A Simple Crud operation performed using JQuery(AJAX), SQL Server , ADO Dotnet on
 
 
 <---------------------------------------SQL Queries--------------------------------->
+
 Create Database DatabaseName
 Use DatabaseName
+
 Create Table TableName
 (Id int Primary Key Identity,
 Name Varchar(50),
 Email Varchar(50),
 Phone Varchar(12)
 )
+
 <--------------------------------------Procedures----------------------------------->
+
 Create Procedure spAddEmployee  
 (  
  @Name Varchar(50),  
