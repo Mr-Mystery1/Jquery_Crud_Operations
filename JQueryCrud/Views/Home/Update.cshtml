@@ -1,0 +1,48 @@
+﻿<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+        $(document).ready(function () {
+        var employeeData = sessionStorage.getItem("employeeData");
+
+        if (employeeData) {
+            var data = JSON.parse(employeeData);
+            $("#Id").val(data.id);
+            $("#Name").val(data.name);
+            $("#Email").val(data.email);
+            $("#Phone").val(data.phone);
+
+            // Clear session storage after loading data to avoid stale values
+            sessionStorage.removeItem("employeeData");
+        }
+    });
+</script>
+
+<div class="bg-success d-flex justify-content-center">
+    <h1>Update Employee</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Id</label>
+            <input type="text" disabled="disabled" class="form-control" id="Id" placeholder="E1001">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="text" class="form-control" id="Name" placeholder="Enter name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email </label>
+            <input type="text" class="form-control" id="Email" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" id="Phone" placeholder="name@example.com">
+        </div>
+        <br />
+        <button class="btn btn-primary" id="Update">
+            Update
+        </button>
+
+    </div>
+
+</div>
